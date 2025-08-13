@@ -1,1 +1,30 @@
-<H1>aff</H1>
+<div class="container my-5 text-center">
+  <div class="card shadow-lg p-4" style="max-width: 4000px; margin: auto; border-radius: 10px; background-color: #fff0f6;">
+    <h1 class="mb-4" style="color: #ee75a1">Mega Sena 🎊</h1>
+
+    <form>
+      <div class="mb-4">
+        <div class="d-flex justify-content-center gap-2 mb-2">
+          <span *ngFor="let num of numerosSorteados" class="badge bg-success fs-4 p-3">
+            {{ num }}
+          </span>
+        </div>
+        <button type="button" class="btn bg-pink fs-4 p-3" style="color: #d03673;" (click)="sorteio()">Girar✨</button>
+      </div>
+
+      <div class="mb-3">
+        <h4>Corrija seu Bilheteヾ(≧▽≦*)o</h4>
+        <div class="d-flex justify-content-center gap-2 mb-2">
+          <input type="number" *ngFor="let n of aposta; let i = index"
+                 [(ngModel)]="aposta[i]" min="1" max="60"
+                 class="form-control w-auto text-center">
+        </div>
+        <button type="button" class="btn bg-pink fs-4 p-3" style="color: #d03673;" (click)="corrigir()">Corrijir✨</button>
+      </div>
+
+      <div *ngIf="acertos !== null" class="alert alert-info">
+        Você acertou <strong>{{ acertos }}</strong> números!
+      </div>
+    </form>
+  </div>
+</div>
