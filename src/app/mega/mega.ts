@@ -21,6 +21,7 @@ export class Mega {
 
   }
 this.numerosSorteados = numeros;
+console.log(this.numerosSorteados)  
 this.acertos=null;
 }
 

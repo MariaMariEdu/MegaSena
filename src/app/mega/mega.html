@@ -5,11 +5,9 @@
     <form>
       <div class="mb-4">
         <div class="d-flex justify-content-center gap-2 mb-2">
-          <span *ngFor="let num of numerosSorteados" class="badge bg-success fs-4 p-3">
-            {{ num }}
-          </span>
+          <span *ngFor="let num of numerosSorteados" class="badge bg-success fs-4 p-3">{{ num }}</span>
         </div>
-        <button type="button" class="btn bg-pink fs-4 p-3" style="color: #d03673;" (click)="sorteio()">Girar✨</button>
+        <button type="button" class="btn fs-4 p-3" style="color:#fff0f6; background-color: #d03673;" (click)="sorteio()">Girar✨</button>
       </div>
 
       <div class="mb-3">
@@ -17,14 +15,14 @@
         <div class="d-flex justify-content-center gap-2 mb-2">
           <input type="number" *ngFor="let n of aposta; let i = index"
                  [(ngModel)]="aposta[i]" min="1" max="60"
-                 class="form-control w-auto text-center">
+                 class="form-control w-auto text-center" 
+                 [ngModelOptions]="{standalone:true}">
+
         </div>
-        <button type="button" class="btn bg-pink fs-4 p-3" style="color: #d03673;" (click)="corrigir()">Corrijir✨</button>
+        <button type="button" class="btn fs-4 p-3" style="color:#fff0f6; background-color: #d03673;" (click)="corrigir()">Corrijir✨</button>
       </div>
 
-      <div *ngIf="acertos !== null" class="alert alert-info">
-        Você acertou <strong>{{ acertos }}</strong> números!
-      </div>
+ 
     </form>
   </div>
 </div>
