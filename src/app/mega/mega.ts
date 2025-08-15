@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class Mega {
   numerosSorteados: number[] = [];
   aposta: number [] = Array(6).fill(null);
-  acertos: number | null = null;
+  acertos: number [] | null = null;
   
   sorteio() {
     const numeros: number[] = [];
@@ -34,8 +34,14 @@ if (apostaFiltrada.length < 6 || apostaFiltrada.length > 10){
   alert('(〃￣︶￣) A sua aposta deve ter entre 6 e 10 números, sem repetir!');
   return;
 }
-this.acertos = apostaFiltrada.filter(n => this.numerosSorteados.includes(n)).length;
+this.acertos = apostaFiltrada.filter(n => this.numerosSorteados.includes(n));
 
+if (this.acertos.length == 6 ) {
+  alert ('Ganhooo eeeee')
+}
+else {
+  alert (`ganho não ;-;, voce acertou: ${this.acertos.length}` )
+}
 }
 
 

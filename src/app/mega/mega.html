@@ -11,18 +11,22 @@
       </div>
 
       <div class="mb-3">
+        
         <h4>Corrija seu Bilheteヾ(≧▽≦*)o</h4>
+        
         <div class="d-flex justify-content-center gap-2 mb-2">
-          <input type="number" *ngFor="let n of aposta; let i = index"
-                 [(ngModel)]="aposta[i]" min="1" max="60"
-                 class="form-control w-auto text-center" 
-                 [ngModelOptions]="{standalone:true}">
-
+        
+          <input type="number" *ngFor="let n of [0,1,2,3,4,5]; let i = index"
+          [(ngModel)]="aposta[i]" min="1" max="60" class="form-control w-auto text-center" [ngModelOptions]="{standalone:true}">
+        
         </div>
+
         <button type="button" class="btn fs-4 p-3" style="color:#fff0f6; background-color: #d03673;" (click)="corrigir()">Corrijir✨</button>
+        
       </div>
 
- 
+      
+      
     </form>
   </div>
 </div>
